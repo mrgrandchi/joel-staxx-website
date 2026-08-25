@@ -1,0 +1,6 @@
+[
+  {"name":"Joel Staxx Tee","price":35,"image":"assets/images/merch/tee.jpg","available":true},
+  {"name":"Staxx Hoodie","price":65,"image":"assets/images/merch/hoodie.jpg","available":true},
+  {"name":"Anxiety 2026 Tee","price":40,"image":"assets/images/merch/anxiety-tee.jpg","available":true},
+  {"name":"Staxx Snapback","price":30,"image":"assets/images/merch/snapback.jpg","available":true}
+]
