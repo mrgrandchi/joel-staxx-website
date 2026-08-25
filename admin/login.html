@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Joel Staxx — Admin Login</title>
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin-body">
+<main class="auth-shell">
+  <section class="auth-card">
+    <div class="brand-mark">JS</div>
+    <div class="eyebrow">JOEL STAXX ENTERTAINMENT</div>
+    <h1>Artist Portal</h1>
+    <p class="muted">Private access for Joel Staxx and authorized team members.</p>
+    <form id="admin-login-form" novalidate>
+      <label>Email<input id="admin-email" type="email" autocomplete="username" required placeholder="you@example.com"></label>
+      <label>Password<input id="admin-password" type="password" autocomplete="current-password" required placeholder="••••••••"></label>
+      <button class="admin-btn primary" type="submit">Sign In</button>
+      <button class="text-btn" id="forgot-password" type="button">Forgot password?</button>
+      <div id="auth-message" class="auth-message" role="status" aria-live="polite"></div>
+    </form>
+    <a class="back-link" href="../">← Back to Joel Staxx Entertainment</a>
+  </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabase-client.js"></script>
+<script src="../js/admin-auth.js"></script>
+</body>
+</html>
