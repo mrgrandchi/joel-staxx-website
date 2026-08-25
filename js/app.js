@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded',()=>{
     }
   });
 
-  // Keep release cards visually honest until each official cover is matched.
   document.querySelectorAll('.release-card').forEach(card=>{
     const cover=card.querySelector('.cover');
     const img=cover?.querySelector('img');
@@ -28,7 +27,6 @@ document.addEventListener('DOMContentLoaded',()=>{
     if(cover&&img){img.style.display='none';cover.classList.add('verified-release-cover');cover.innerHTML=`<div class="verified-release-title">${title}</div><div class="verified-release-label">OFFICIAL RELEASE</div><div class="play-overlay"><span class="play-circle">→</span></div>`}
   });
 
-  // Verified latest YouTube videos supplied from Joel Staxx's official channel.
   const latestVideos=[
     {id:'bvxM8v4VSFs',title:'HOT SUMMER DAYS',meta:'Latest Video • 2 days ago'},
     {id:'xXHqD1m8qFs',title:'EYES CLOSED',meta:'Video • 4 weeks ago'},
@@ -39,12 +37,10 @@ document.addEventListener('DOMContentLoaded',()=>{
     videoGrid.innerHTML=latestVideos.map(video=>`<a class="video video-card latest-youtube-card" href="https://www.youtube.com/watch?v=${video.id}" target="_blank" rel="noopener" aria-label="Watch ${video.title} on YouTube"><img src="https://i.ytimg.com/vi/${video.id}/maxresdefault.jpg" alt="${video.title} — Joel Staxx" loading="lazy"><div class="video-play"><span>▶</span></div><div class="label"><strong>${video.title}</strong><small>${video.meta}</small></div></a>`).join('');
   }
 
-  // Persistent Joel Staxx player. Spotify supplies the actual playback controls.
   if(!document.getElementById('staxx-player')){
     const style=document.createElement('style');
     style.textContent=`.verified-release-cover{aspect-ratio:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px;background:radial-gradient(circle at 70% 25%,#2460ff55,transparent 36%),linear-gradient(145deg,#101a31,#05070c);position:relative;overflow:hidden}.verified-release-title{font-size:clamp(22px,3vw,34px);font-weight:950;font-style:italic;text-transform:uppercase;line-height:.9;letter-spacing:-1px}.verified-release-label{font-size:8px;letter-spacing:2px;color:#8191aa;margin-top:12px}.latest-youtube-card .label strong,.latest-youtube-card .label small{display:block}.latest-youtube-card .label small{margin-top:5px;font-size:10px;opacity:.72}.staxx-player{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:9000;width:min(760px,calc(100% - 28px));background:rgba(12,15,22,.95);border:1px solid rgba(255,255,255,.14);border-radius:18px;box-shadow:0 18px 60px rgba(0,0,0,.45);backdrop-filter:blur(18px);overflow:hidden}.staxx-player-bar{display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:center;padding:10px 12px}.player-artwork{width:52px;height:52px;border-radius:10px;object-fit:cover}.player-copy{min-width:0}.player-copy strong,.player-copy span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.player-copy strong{font-size:14px}.player-copy span{font-size:12px;opacity:.58;margin-top:3px}.player-actions{display:flex;gap:7px;align-items:center}.player-actions button,.player-actions a{height:38px;min-width:38px;padding:0 12px;border:1px solid rgba(255,255,255,.13);border-radius:999px;background:rgba(255,255,255,.05);color:#fff;text-decoration:none;display:inline-grid;place-items:center;cursor:pointer;font:inherit}.player-actions .player-primary{background:#fff;color:#080b12;border-color:#fff}.player-actions button:hover,.player-actions a:hover{background:rgba(255,255,255,.12)}.staxx-player-panel{display:none;border-top:1px solid rgba(255,255,255,.1);padding:12px}.staxx-player.is-open .staxx-player-panel{display:block}.staxx-player-panel iframe{display:block;width:100%;height:152px;border:0;border-radius:12px}.player-note{font-size:11px;opacity:.55;margin:8px 2px 0}@media(max-width:650px){.staxx-player{bottom:10px;width:calc(100% - 18px);border-radius:16px}.staxx-player-bar{grid-template-columns:44px 1fr auto;padding:8px}.player-artwork{width:44px;height:44px}.player-actions a{display:none}.player-actions button{height:36px;min-width:36px;padding:0 9px}.staxx-player-panel iframe{height:152px}}`;
     document.head.appendChild(style);
-
     const player=document.createElement('div');
     player.id='staxx-player';
     player.className='staxx-player';
@@ -53,4 +49,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     document.getElementById('player-toggle').addEventListener('click',()=>player.classList.toggle('is-open'));
     document.getElementById('player-close').addEventListener('click',()=>player.remove());
   }
+
+  const cinematicCss=document.createElement('link');cinematicCss.rel='stylesheet';cinematicCss.href='css/cinematic-video.css';document.head.appendChild(cinematicCss);
+  const cinematicScript=document.createElement('script');cinematicScript.src='js/cinematic-video.js';document.body.appendChild(cinematicScript);
 });
