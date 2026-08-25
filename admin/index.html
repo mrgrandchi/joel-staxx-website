@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Joel Staxx — Entertainment HQ</title>
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin-body dashboard-body">
+<div class="admin-layout">
+  <aside class="admin-sidebar">
+    <a class="admin-logo" href="../">JOEL <span>STAXX</span></a>
+    <div class="admin-label">ENTERTAINMENT HQ</div>
+    <nav>
+      <a class="active" href="./">Overview</a>
+      <a href="#analytics">Analytics <small>Phase 2</small></a>
+      <a href="#music">Music</a>
+      <a href="#videos">Videos</a>
+      <a href="#merch">Merch</a>
+      <a href="#bookings">Bookings</a>
+      <a href="#fans">Fans</a>
+    </nav>
+    <a class="back-link" href="../">← Public website</a>
+  </aside>
+  <main class="admin-main">
+    <header class="admin-topbar"><div><div class="eyebrow">ARTIST PORTAL</div><h1>Welcome back, <span id="admin-name">Joel</span>.</h1><p class="muted">Your private control centre for Joel Staxx Entertainment.</p></div><button id="admin-signout" class="admin-btn">Sign Out</button></header>
+    <section class="admin-grid stats-grid">
+      <article class="stat-card"><span>Website visitors</span><strong>—</strong><small>Phase 2 analytics</small></article>
+      <article class="stat-card"><span>Music clicks</span><strong>—</strong><small>Phase 2 analytics</small></article>
+      <article class="stat-card"><span>Video plays</span><strong>—</strong><small>Phase 2 analytics</small></article>
+      <article class="stat-card"><span>Booking inquiries</span><strong>—</strong><small>Phase 2 analytics</small></article>
+    </section>
+    <section class="admin-panel"><div class="panel-head"><div><div class="eyebrow">READY FOR PHASE 2</div><h2>Analytics foundation</h2></div><span class="status-pill">AUTHENTICATED</span></div><p>Authentication is active. The next phase will record real page views, music clicks, video plays, social clicks and booking activity in Supabase.</p><div class="event-list"><div><b>🔐 Secure login</b><span>Supabase Auth</span></div><div><b>📊 Event tracking</b><span>Coming in Phase 2</span></div><div><b>🎵 Music analytics</b><span>Coming in Phase 2</span></div><div><b>🎬 Video analytics</b><span>Coming in Phase 2</span></div></div></section>
+    <section class="admin-panel"><div class="panel-head"><div><div class="eyebrow">ACCOUNT</div><h2>Signed-in user</h2></div></div><div class="account-row"><span>Email</span><strong id="admin-email-display">Loading…</strong></div><div class="account-row"><span>Account status</span><strong>Authenticated</strong></div></section>
+  </main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabase-client.js"></script>
+<script src="../js/admin-auth.js"></script>
+</body>
+</html>
